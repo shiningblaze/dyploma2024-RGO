@@ -1,0 +1,25 @@
+{% extends 'base.html' %} 
+{% block content %}
+<form method = "post" class="form_cl">
+
+    <h3 class = "heading_three">Welcome to our Messenger</h3>
+   <div class="getting_name">
+        <label class="label_name">Enter your name:</label>
+        <input type="text" class="texting" placeholder="Name" name="name" value={{name}}>
+    </div>
+    <div class="join">
+        <input type="text" class="room_code" placeholder="Room code" name="code" value={{code}}>
+        <button type="submit" name="join" id="join_btn">Join a room</button>
+    </div>
+     <button type="submit" name="create" class="create">Create a room</button>
+
+    {% if error%}
+    <ul class="ull">
+        <li>{{error}}</li>
+    </ul>
+    {% endif %}
+</form>
+{% endblock %}
+
+
+
